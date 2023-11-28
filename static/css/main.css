@@ -1,0 +1,315 @@
+@font-face {
+    font-family: 'Space Mono';
+    src: url('/static/fonts/SpaceMono-Regular.ttf');
+}
+
+:root {
+    --bg: #212121;
+    --bg-sec: #1a1a1a;
+    --accent: #d4b595;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.25rem;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--bg);
+    color: white;
+    font-family: 'Space Mono', monospace;
+    font-weight: normal;
+    font-variant: normal;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+/*a:hover {*/
+/*    text-shadow:0px 0px 1px white;*/
+/*}*/
+
+.header {
+    width: 100%;
+    height: 32px;
+    background-color: var(--bg-sec);
+}
+
+.btn {
+    background-color: var(--bg-sec);
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 8px;
+    color: white;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.25rem;
+    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+}
+
+.btn:hover {
+    /*text-shadow:0px 0px 1px white;*/
+    cursor: pointer;
+    color: var(--accent);
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    font-size: 1.5rem;
+}
+
+form input {
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: var(--bg-sec);
+    color: white;
+    line-height: 1.75rem;
+    font-size: 1.25rem;
+}
+
+form label {
+    line-height: 2rem;
+}
+
+form input:focus {
+    outline: none;
+}
+
+.exit {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+}
+
+.exit-icon-svg {
+    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+    fill: white;
+    vertical-align: bottom;
+    height: 24px;
+}
+
+.exit-icon-svg:hover {
+    fill: var(--accent);
+}
+
+.exit-icon {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
+
+.loader {
+    position: absolute;
+    visibility: hidden;
+    border: 12px solid #f3f3f3;
+    border-top: 12px solid #222;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    animation: spin 2s linear infinite;
+    z-index: 1;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.con-status {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+}
+
+.con-status-text {
+    display: inline-block;
+    margin: 0 0 0 4px;
+    line-height: 1rem;
+}
+
+.green-text {
+    color: #81de76;
+}
+
+.orange-text {
+    color: #ffa351;
+}
+
+.red-text {
+    color: #ed4a3c;
+}
+
+.green {
+    background-color: #81de76;
+}
+
+.orange {
+    background-color: #ffa351;
+}
+
+.red {
+    background-color: #ed4a3c;
+}
+
+.dot {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+/*alert*/
+
+.alert {
+    padding: 20px;
+    background-color: var(--accent);
+    color: black;
+    margin-bottom: 15px;
+    position: absolute;
+    border-radius: 4px;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: grey;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+.main {
+    width: 100%;
+    height: calc(100% - 32px);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/*login*/
+
+.login-select {
+    list-style-type: none;
+    padding: 4px;
+    margin: 0;
+    /*border: 1px solid white;*/
+    text-align: center;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+    overflow-y: auto;
+    max-height: 50vh;
+}
+
+.login-select li {
+    /*border-bottom: 1px solid white;*/
+}
+
+.login-select li a:hover {
+    color: var(--accent);
+}
+
+.login-select:last-child {
+    border-bottom: none;
+}
+
+/*new*/
+
+.mnemonic-confirm {
+    width: 60%;
+}
+
+.text-info {
+
+}
+
+.text-mnemonic {
+    text-align: center;
+    color: var(--accent);
+    font-size: 1.5rem;
+}
+
+/*wallet*/
+
+.wallet-overview {
+    text-align: center;
+}
+
+.wallet-amount {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.wallet-amountusd {
+
+}
+
+.wallet-address {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+.wallet-icon {
+    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+    fill: white;
+    vertical-align: bottom;
+    height: 2.5rem;
+}
+
+.wallet-icon:hover {
+    fill: var(--accent);
+}
+
+.wallet-icon-send {
+    position: absolute;
+    right: 0;
+    bottom: calc(2.5rem + 16px);
+    margin: 0 8px 8px 0;
+}
+
+.wallet-icon-settings {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0 8px 8px 0;
+    z-index: 1;
+}
+
+.wallet-icon-back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 32px 0 0 8px;
+}
+
+.wallet-icon-delete {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0 8px 8px 0;
+}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="main">
+        <div class="center">
+            <p>Are you sure you want to remove this wallet?</p>
+            <br>
+            <a class="btn" href="/delete/{{ address }}">Yes!</a>
+            <a class="btn" href="/wallet">Go Back</a>
+        </div>
+    </div>
+{% endblock %}

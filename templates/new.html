@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="main">
+        <form method="post">
+            <label for="pw1">Password:</label>
+            <br>
+            <input name="pw1" id="pw1" type="password">
+            <br>
+            <label for="pw2">Repeat:</label>
+            <br>
+            <input name="pw2" id="pw2" type="password">
+            <br>
+            <div class="center">
+                <input type="submit" class="btn" value="Continue">
+            </div>
+        </form>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+    </div>
+{% endblock %}
