@@ -1,25 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="main">
-        <form method="post">
-            <label for="mnemo">Mnemonic Phrase:</label>
-            <br>
-            <input name="mnemo" id="mnemo" type="text">
-            <br>
-            <div class="center">
-                <input type="submit" class="btn" value="Continue">
-            </div>
-        </form>
-        {% with messages = get_flashed_messages() %}
-          {% if messages %}
-            {% for message in messages %}
-              <div class="alert">
-              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-              {{ message }}
-              </div>
-            {% endfor %}
-          {% endif %}
-        {% endwith %}
-    </div>
+<div class="main">
+    <form method="post">
+        <label for="mnemo">Mnemonic Phrase:</label>
+        <br>
+        <input name="mnemo" id="mnemo" type="text">
+        <br>
+        <div class="center">
+            <input type="submit" class="btn" value="Continue">
+        </div>
+    </form>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+          {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+</div>
 {% endblock %}

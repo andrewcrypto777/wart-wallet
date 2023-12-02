@@ -1,6 +1,7 @@
 import threading
 import sys
 import webview
+import re
 from engineio.async_drivers import gevent
 from flask import Flask, render_template, request, flash, redirect, url_for, make_response
 from flask_apscheduler import APScheduler
@@ -264,14 +265,23 @@ def send():
         amount = request.form.get("amount")
         fee = request.form.get("fee")
 
-        amount_int = round(float(amount) * 10 ** 8)
-        fee_int = round(float(fee) * 10 ** 8)
+        if not re.search("^[a-fA-F0-9]{48}$", recipient):
+            flash(f"Invalid recipient.")
+            return render_template("send.html")
+
+        try:
+            amount = float(amount)
+            fee = float(fee)
+        except ValueError:
+            flash(f"Invalid value.")
+            return render_template("send.html")
+
+        amount_int = round(amount * 10 ** 8)
+        fee_int = round(fee * 10 ** 8)
 
         tx_buffer = [recipient, amount_int, fee_int, privkey]
 
-        print(tx_buffer)
-
-        flash(f"You are sending {amount} WART to {recipient}.<div class='center'><a class='btn' id='send-confirm' href='/submit'>Confirm</a></div>")
+        flash(f"You are sending {amount:.8f} WART to {recipient}.<div class='center'><a class='btn' id='send-confirm' href='/submit'>Confirm</a></div>")
         return render_template("send.html")
     else:
         return render_template("send.html")
@@ -295,7 +305,7 @@ def submit():
             flash(str(r))
             return redirect(url_for("send"))
     except requests.exceptions.RequestException as e:
-        flash(str(e))
+        flash(f"Connection error. Try changing your peer in the settings.")
         return redirect(url_for("send"))
 
 

@@ -1,42 +1,42 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="main">
-        <a href="/wallet" class="wallet-icon-back"><svg xmlns="http://www.w3.org/2000/svg" class="wallet-icon" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></a>
-        <form class="send-form" method="post">
-            <label for="recipient">Recipient:</label>
-            <br>
-            <input name="recipient" id="recipient" type="text">
-            <br>
-            <label for="amount">Amount:</label>
-            <br>
-            <input name="amount" id="amount" type="number" value="0.00000001" step="0.00000001" min="0.00000001">
-            <br>
-            <label for="fee">Fee:</label>
-            <br>
-            <input name="fee" id="fee" type="number" value="0.00000001" step="0.00000001" min="0.00000001">
-            <br>
-            <div class="center">
-                <input type="submit" class="btn" value="Send">
-            </div>
-        </form>
-        <div class="loader"></div>
-        <script type="text/javascript" charset="utf-8">
-            $(document).ready(function(){
-                $("#send-confirm").on("click", function(e){
-                    $(".loader").css("visibility", "visible");
-                });
+<div class="main">
+    <a href="/wallet" class="wallet-icon-back"><svg xmlns="http://www.w3.org/2000/svg" class="wallet-icon" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></a>
+    <form class="send-form" method="post">
+        <label for="recipient">Recipient:</label>
+        <br>
+        <input name="recipient" id="recipient" type="text">
+        <br>
+        <label for="amount">Amount:</label>
+        <br>
+        <input name="amount" id="amount" type="text" value="0.00000001">
+        <br>
+        <label for="fee">Fee:</label>
+        <br>
+        <input name="fee" id="fee" type="text" value="0.00000001">
+        <br>
+        <div class="center">
+            <input type="submit" class="btn" value="Send">
+        </div>
+    </form>
+    <div class="loader"></div>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function(){
+            $("#send-confirm").on("click", function(e){
+                $(".loader").css("visibility", "visible");
             });
-        </script>
-        {% with messages = get_flashed_messages() %}
-          {% if messages %}
-            {% for message in messages %}
-              <div class="alert">
-              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-              {{ message | safe }}
-              </div>
-            {% endfor %}
-          {% endif %}
-        {% endwith %}
-    </div>
+        });
+    </script>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+          {{ message | safe }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+</div>
 {% endblock %}

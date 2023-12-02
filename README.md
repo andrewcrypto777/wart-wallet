@@ -4,7 +4,7 @@
 
 > To use this wallet (sending txs and synchronizing balance) you'll need to provide a node to connect to. Either running locally on your machine or a node thats publicly accessible through the internet.
 
-## Using Bundled Executables
+## Using Executables
 
 ### Requirements:
 
@@ -17,7 +17,7 @@
 - `sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-3.0 gir1.2-webkit2-4.1`
 
 ### Run:
-Download executable for your operating system [here]().
+Download executable for your operating system [here](https://github.com/andrewcrypto777/wart-wallet/releases).
 
 The wallet will create a database file next to the executable when you run it.
 It's best to put them in a folder like this:

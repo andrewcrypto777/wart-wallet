@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="main">
-        <div class="mnemonic-confirm">
-            <p class="text-info">Your wallet has been successfully created. This is your mnemonic phrase:</p>
-            <p class="text-mnemonic">{{ mnemonic }}</p>
-            <p class="text-info">Write it down and store it in a secure place! You'll need it to restore your wallet.</p>
-            <div class="center">
-                <a href="/wallet" class="btn">Continue</a>
-            </div>
+<div class="main">
+    <div class="mnemonic-confirm">
+        <p class="text-info">Your wallet has been successfully created. This is your mnemonic phrase:</p>
+        <p class="text-mnemonic">{{ mnemonic }}</p>
+        <p class="text-info">Write it down and store it in a secure place! You'll need it to restore your wallet.</p>
+        <div class="center">
+            <a href="/wallet" class="btn">Continue</a>
         </div>
     </div>
+</div>
 {% endblock %}
