@@ -36,6 +36,12 @@ It's best to put them in a folder like this:
 #### Linux only:
 *tested for Ubuntu 22.04*
 - `sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-3.0 gir1.2-webkit2-4.1`
+- `sudo apt install python3-venv python3-wheel python3-dev`
+- ```
+  sudo apt install libgirepository1.0-dev build-essential \
+  libbz2-dev libreadline-dev libssl-dev zlib1g-dev libsqlite3-dev wget \
+  curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libcairo2-dev
+  ```
 - `pip install PyGObject`
 
 ### Run:
