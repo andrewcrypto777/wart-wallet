@@ -16,13 +16,13 @@ jobs:
         with:
           fetch-depth: 0
       - name: bundle linux
-          uses: JackMcKew/pyinstaller-action-linux@main
-          with:
-            path: src
+        uses: JackMcKew/pyinstaller-action-linux@main
+        with:
+          path: src
       - name: bundle windows
-          uses: JackMcKew/pyinstaller-action-windows@main
-          with:
-            path: src
+        uses: JackMcKew/pyinstaller-action-windows@main
+        with:
+          path: src
       - name: Get Previous tag
         id: previoustag
         uses: WyriHaximus/github-action-get-previous-tag@v1
