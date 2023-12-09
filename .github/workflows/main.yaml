@@ -16,11 +16,11 @@ jobs:
         with:
           fetch-depth: 0
       - name: bundle linux
-        uses: JackMcKew/pyinstaller-action-linux@main
+        uses: andrewcrypto777/pyinstaller-action-linux@python3.10
         with:
           path: src
       - name: bundle windows
-        uses: JackMcKew/pyinstaller-action-windows@main
+        uses: JackMcKew/pyinstaller-action-windows@python3-10-pyinstaller-5-3
         with:
           path: src
       - name: Get Previous tag
