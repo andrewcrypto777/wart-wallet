@@ -3,7 +3,7 @@ import sqlite3
 
 class DB:
     def __init__(self):
-        self.con = sqlite3.connect("../wartwallet.db", check_same_thread=False)
+        self.con = sqlite3.connect("wartwallet.db", check_same_thread=False)
         with self.con:
             self.con.execute("""CREATE TABLE IF NOT EXISTS wallets (
                             id INTEGER PRIMARY KEY AUTOINCREMENT,
