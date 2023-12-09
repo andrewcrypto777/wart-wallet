@@ -58,5 +58,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: src/dist/windows/main.exe
-          asset_name: wart-wallet-windows-${{ steps.semvers.outputs.patch }}
+          asset_name: wart-wallet-windows-${{ steps.semvers.outputs.patch }}.exe
           asset_content_type: application/octet-stream
